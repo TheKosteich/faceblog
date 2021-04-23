@@ -71,6 +71,8 @@ DATABASES = {
     }
 }
 
+# To fix DEFAULT_AUTO_FIELD warnings in Django 3.2
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -118,3 +120,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 POSTS_ON_PAGE_COUNT = 3
+
+# email backend for development
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# Directory for storing emails
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+# template for email config
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'your_account@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your_password'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
