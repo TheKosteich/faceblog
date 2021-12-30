@@ -16,8 +16,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+SITE_ID = 1
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,6 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    # Additional apps
+    'django.contrib.postgres',
     # External applications
     'taggit',
     # Project applications
@@ -69,8 +74,12 @@ WSGI_APPLICATION = 'faceblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'faceblog',
+        'USER': 'faceblog',
+        'PASSWORD': 'Wsm9oS9x2Lwazk5oZAdl',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
